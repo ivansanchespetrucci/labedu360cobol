@@ -1,0 +1,65 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGRAM08.
+      ******************************************************************
+      * Autor: XXXXXXXXX
+      * Data:
+      * Assunto: ATIVIDADE CALCULO IR
+      ******************************************************************
+ 
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+ 
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+      *----------------- VARIAVEL DE ENTRADA 
+       77  WRK-SALARIO    PIC 9(08)V99     VALUE ZEROS.
+       
+      *----------------- VARIAVEL DE CALCULO 
+       77  WRK-IR         PIC 9(08)V99     VALUE ZEROS.
+       77  WRK-LIQUIDO    PIC 9(08)V99     VALUE ZEROS.
+       
+      *----------------- VARIAVEL DE EDICAO
+       77  WRK-LIQUIDO2   PIC ZZ.ZZZ.ZZ9,99   VALUE ZEROS.
+       77  WRK-SALARIO2   PIC ZZ.ZZZ.ZZ9,99   VALUE ZEROS. 
+       77  WRK-IR2        PIC ZZ.ZZZ.ZZ9,99   VALUE ZEROS.
+
+ 
+       PROCEDURE DIVISION.
+           DISPLAY "DIGITE O SALARIO: "
+           ACCEPT WRK-SALARIO.
+ 
+       0150-PROCESSAR SECTION..
+           IF WRK-SALARIO GREATER THAN OR EQUAL 1000
+               COMPUTE WRK-IR = WRK-SALARIO * 0,15
+           ELSE
+               COMPUTE WRK-IR = WRK-SALARIO * 0,10
+           END-IF.
+ 
+           COMPUTE WRK-LIQUIDO = WRK-SALARIO - WRK-IR.
+           
+           MOVE WRK-SALARIO TO WRK-SALARIO2.
+           MOVE WRK-IR      TO WRK-IR2.
+           MOVE WRK-LIQUIDO TO WRK-LIQUIDO2.
+ 
+ 
+       0300-MOSTRAR SECTION.
+           DISPLAY "SALARIO BRUTO: "   WRK-SALARIO2.
+           DISPLAY "IR CALCULADO : "   WRK-IR2.
+           DISPLAY "SALARIO LIQUIDO: " WRK-LIQUIDO2.
+ 
+       0400-FINALIZAR SECTION.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
