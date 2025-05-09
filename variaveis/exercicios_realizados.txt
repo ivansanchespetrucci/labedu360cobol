@@ -1,0 +1,80 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CONVERSAO.
+      *-----------------------------------------
+      * AUTOR: IVAN SANCHES
+      * DATA: XX/XX/20XX
+      * OBJETIVO: CONVERSAO DE DOLAR EM REAL
+      *-----------------------------------------       
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+      *----------------------- VARIAVEL DE ENTRADA
+       01 WRK-VALDOLAR          PIC 9(02)V99 VALUE ZEROS.
+       01 WRK-QTDOLAR           PIC 9(03)V99 VALUE ZEROS.
+       
+      *----------------------- VARIAVEL CALCULO
+       01 WRK-CONVERSAO         PIC 9(05)V99 VALUE ZEROS.
+      
+       *----------------------- VARIAVEL TIPO MASCARA
+       01 WRK-CONVERSAO-ED      PIC ZZ.ZZ9,99.
+       
+       PROCEDURE DIVISION.
+            DISPLAY "VALOR DO DOLAR HOJE "
+                ACCEPT WRK-VALDOLAR.
+            DISPLAY "QUANTIDADE DE DOLARES A CONVERTER "
+                ACCEPT WRK-QTDOLAR.
+            
+            COMPUTE WRK-CONVERSAO = WRK-VALDOLAR * WRK-QTDOLAR
+            
+            MOVE WRK-CONVERSAO        TO WRK-CONVERSAO-ED.
+            DISPLAY "VALOR EM REAIS " WRK-CONVERSAO-ED
+            STOP RUN.
+
+
+=============================================================================
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. IMC.
+      *-----------------------------------------
+      * AUTOR: IVAN SANCHES
+      * DATA: XX/XX/20XX
+      * OBJETIVO: CALCULO DO IMC
+      *-----------------------------------------
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+      *----------------------- VARIAVEL DE ENTRADA
+       01 WRK-PESO              PIC 9(03)V99 VALUE ZEROS.
+       01 WRK-ALTURA            PIC 9(02)V99 VALUE ZEROS.
+       
+      *----------------------- VARIAVEL CALCULO
+       01 WRK-IMC               PIC 9(02)V99 VALUE ZEROS.
+      
+       *----------------------- VARIAVEL TIPO MASCARA
+       01 WRK-IMC-ED            PIC Z9,99.
+       
+       PROCEDURE DIVISION.
+            DISPLAY "SEU PESO "
+                ACCEPT WRK-PESO.
+            DISPLAY "SUA ALTURA"
+                ACCEPT WRK-ALTURA.
+            
+            COMPUTE WRK-IMC = (WRK-ALTURA * WRK-ALTURA)
+            
+            MOVE WRK-IMC             TO WRK-IMC-ED.
+            DISPLAY "SEU IMC "          WRK-IMC.
+            STOP RUN.
+
+
+
+
+
+            
