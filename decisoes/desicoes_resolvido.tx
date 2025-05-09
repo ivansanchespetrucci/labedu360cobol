@@ -55,7 +55,70 @@
 
 
 
+==========================================
 
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VIAGEM.
+      ******************************************************************
+      * Autor: xxxxxx
+      * Data:
+      * Assunto: CALCULAR VALOR DE VIAGEM
+      ******************************************************************
+ 
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+ 
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+      *----------------- VARIAVEL DE ENTRADA 
+       01  WRK-PASSAGEIRO  PIC X(20)        VALUE SPACES.
+       01  WRK-DESTINO     PIC X(01)        VALUE SPACES.
+       01  WRK-VALORCOMB   PIC 9(02)V99     VALUE ZEROS.
+       
+       
+      *----------------- VARIAVEL DE CALCULO 
+       01  WRK-VALORVIAGEM PIC 9(04)V99     VALUE ZEROS.
+       01  WRK-KM          PIC 9(04)        VALUE ZEROS.
+       01  WRK-FATOR       PIC 9(02)V99     VALUE ZEROS.
+              
+      *----------------- VARIAVEL DE EDICAO
+
+ 
+       PROCEDURE DIVISION.
+           DISPLAY "SEU NOME: "
+           ACCEPT WRK-PASSAGEIRO.
+           
+           DISPLAY "VALOR COMBUSTIVEL: "
+           ACCEPT WRK-VALORCOMB.
+           
+           DISPLAY "QUAL DESTINO (1-JUNDIAI 2-CAMPINAS 3-PIRACICABA) :".
+           ACCEPT WRK-DESTINO.
+                      
+           EVALUATE  WRK-DESTINO           
+              WHEN "1"      
+                   MOVE 120  TO WRK-KM   
+                   MOVE 1,30 TO WRK-FATOR
+              WHEN "2"        
+                   MOVE 180  TO WRK-KM   
+                   MOVE 1,35 TO WRK-FATOR
+              WHEN "3"        
+                    MOVE 220 TO WRK-KM  
+                    MOVE 1,40 TO WRK-FATOR
+            END-EVALUATE.
+            
+             IF WRK-KM EQUAL 0 
+                  DISPLAY "NAO POSSO LEVAR"
+             ELSE    
+               COMPUTE WRK-VALORCOMB = WRK-VALORCOMB / 10 
+               COMPUTE WRK-VALORVIAGEM = 
+                       (WRK-KM * WRK-VALORCOMB * WRK-FATOR)          
+               DISPLAY "VALOR DA VIAGEM " WRK-VALORVIAGEM
+            END-IF.
+ 
+           STOP RUN.
 
  
 
