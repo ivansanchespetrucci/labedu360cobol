@@ -1,0 +1,20 @@
+1) Programa: Fazer a conversão de dolar em real:
+
+● Ler o valor do dolar atual (Ex: 5,60)
+● Ler a quantidade de doláres a serem convertidos em real (Ex: 15,00)
+● Calcular a conversão para reais
+● Mostrar a conversão (com casas decimais e formatado)
+
+Teste de Mesa: Valor dolar = 5,60 , qt dolares = 15,00. Resultado 84,00
+Saida na tela esperada: Conversao de 15,00 dolares = 84,00 reais
+
+
+2) Programa: Calcular o IMC ( IMC = peso / (altura x altura) )
+
+● Leia o peso (em KG – Ex: 87,50 )
+● Leia a altura (em MT – Ex: 1,75)
+● Calcular o IMC
+● Mostre o resultado
+
+Teste de mesa: P = 87.5 , A=1.75 resultado será 28.57…
+Saida na tela esperada: Seu IMC = 28.57
