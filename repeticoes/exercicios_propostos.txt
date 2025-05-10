@@ -1,0 +1,32 @@
+Programa: Pagamento de Contas
+O cliente irá informar o saldo que possui, depois informar pagamentos a serem feitos . 
+Quando acabarem os pagamentos devemos mostrar quanto ficou o saldo final do cliente.
+
+Devemos informar o valor de saldo em conta.
+Em seguida, informar valores de pagamentos.
+Ao final deverá ser calculado o Saldo Final que será composto por Saldo Inicial - Total de Pagamentos.
+
+Algoritmo sugerido:
+● Ler o saldo inicial
+● Ler pagamentos (loop)
+- Acumular pagamentos
+- Sair quando valor de pagamento informado for igual a zero
+● Calcular o Saldo Final = Saldo Inicial - Pagamentos
+
+● Mostrar : 
+Saldo Inicial
+ Total de Pagamentos
+ Saldo Final
+
+Teste de Mesa:
+Saldo inicial = 1000,00, Pagamento = 80,00, Pagamento = 10,00, Pagamento
+= 60,00, Pagamento = 0,00, Saldo Final = 850,00
+
+Saida na tela esperada:
+
+Saldo Inicial : 1.000,00
+Pagamentos : 150,00
+Salario Final : 850,00
+
+PS: Tente desenvolver ou adaptar esse exercicio usando a prática de Lógica
+Estruturada (Inicializar, Processar e Finalizar).
