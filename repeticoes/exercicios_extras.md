@@ -22,5 +22,5 @@ Leia o produto
 
 https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg
 
-("[/imgs/loop_exer_caixa.jpg]("https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg")")
+![/imgs/loop_exer_caixa.jpg](https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg)
 
