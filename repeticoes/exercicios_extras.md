@@ -20,5 +20,5 @@ Leia o produto
 • Acumular o valor (somente se > 0)
 • Leia se deseja continuar comprando
 
-![image]("[../imgs/loop_exer_caixa.jpg](https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg)")
+("[../imgs/loop_exer_caixa.jpg](https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg)")
 
