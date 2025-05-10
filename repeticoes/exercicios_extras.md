@@ -8,7 +8,9 @@ final , considerando X meses com Y% de juros ao mês.
 • Mostrar: Capital inicial, quantidade de meses, taxa de juros e
 capital final
 
-<img src="imgs/loop_exer_caixa.jpg">
+![/imgs/loop_exer_investimento.jpg](https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_investimento.jpg)
+
+
 
 
 Programa: Simular um caixa de supermercado, onde serão calculados todos os produtos e
@@ -19,8 +21,6 @@ Leia o produto
 • Leia o valor
 • Acumular o valor (somente se > 0)
 • Leia se deseja continuar comprando
-
-https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg
 
 ![/imgs/loop_exer_caixa.jpg](https://github.com/ivansanchespetrucci/labedu360cobol/blob/main/imgs/loop_exer_caixa.jpg)
 
