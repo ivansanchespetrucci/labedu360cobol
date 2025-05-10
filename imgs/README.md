@@ -1,0 +1,1 @@
+# Imagens de Apoio aos exercicios
