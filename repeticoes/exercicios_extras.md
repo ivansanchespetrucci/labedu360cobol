@@ -20,4 +20,4 @@ Leia o produto
 • Acumular o valor (somente se > 0)
 • Leia se deseja continuar comprando
 
-[<img src="../imgs/loop_exer_caixa.jpg">]
+[("../imgs/loop_exer_caixa.jpg")]
