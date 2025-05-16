@@ -70,4 +70,181 @@
                DISPLAY "PAGAMENTOS    " WRK-PAGAMENTO-QT.
                DISPLAY "SALDO FINAL   " WRK-SALDOF.
        0300-FINALIZAR-FIM. EXIT.  
+
+
+
+
+
+
+----------- VERSAO 2
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PAGAMENTO.
+      ******************************************************************
+      * Autor: xxxxxx
+      * Data:
+      * Assunto: CALCULO DE SALDO X PAGAMENTOS
+      ******************************************************************
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+      *----------------- VARIAVEL DE ENTRADA
+       01  WRK-DADOS.
+           02  WRK-SALDOI      PIC 9(04)V99       VALUE ZEROS.
+           02  WRK-PAGAMENTO   PIC 9(04)V99       VALUE ZEROS.
+
+      *----------------- VARIAVEL DE CALCULO
+       01  WRK-SALDOF          PIC 9(04)V99       VALUE ZEROS.
+       01  WRK-PAGAMENTO-QT    PIC 9(06)V99       VALUE ZEROS.
+
+       
+       01   WRK-FLAG           PIC X(01)         VALUE "S".
+       
+       PROCEDURE           DIVISION.
+       0000-PRINCIPAL      SECTION.    
+             PERFORM 0100-INICIAL.
+             PERFORM 0200-PROCESSAR.
+             PERFORM 0300-FINALIZAR.
+             STOP RUN. 
+       0000-PRINCIPAL-FIM. EXIT.
+       
+       
+       
+       0100-INICIAL        SECTION.
+               DISPLAY "RECEBA SALDO INICIAL"
+               ACCEPT WRK-SALDOI.       
+       0100-INICIAL-FIM. EXIT.
+       
+       
+       0200-PROCESSAR        SECTION.
+             COMPUTE WRK-SALDOF = WRK-SALDOI.
+             
+             PERFORM  UNTIL WRK-FLAG EQUAL "N"
+               DISPLAY "------------------"
+               DISPLAY "SALDO ATUAL " WRK-SALDOF
+               DISPLAY "------------------"
+               
+               DISPLAY "VALOR DO PAGAMENTO "
+               ACCEPT WRK-PAGAMENTO       
+               
+               IF WRK-PAGAMENTO EQUAL 0  
+                   MOVE "N" TO WRK-FLAG
+               ELSE
+                  
+                  IF WRK-PAGAMENTO <= WRK-SALDOF
+                   COMPUTE WRK-SALDOF = WRK-SALDOF - WRK-PAGAMENTO
+                   ADD WRK-PAGAMENTO  TO WRK-PAGAMENTO-QT
+                  ELSE 
+                   DISPLAY "SEM SALDO PARA PAGAMENTO "
+                   DISPLAY "SEU SALDO = " WRK-SALDOF
+                  END-IF    
+                  
+              END-IF     
+            
+            END-PERFORM.
+     
+            
+            
+            
+       0200-PROCESSAR-FIM. EXIT.    
+       
+       
+       
+       0300-FINALIZAR       SECTION.
+               DISPLAY "SALDO INICIAL " WRK-SALDOI.
+               DISPLAY "PAGAMENTOS    " WRK-PAGAMENTO-QT.
+               DISPLAY "SALDO FINAL   " WRK-SALDOF.
+       0300-FINALIZAR-FIM. EXIT.  
+       
+
+--------- VERSAO 3
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PAGAMENTO.
+      ******************************************************************
+      * Autor: xxxxxx
+      * Data:
+      * Assunto: CALCULO DE SALDO X PAGAMENTOS
+      ******************************************************************
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+      *----------------- VARIAVEL DE ENTRADA
+       01  WRK-DADOS.
+           02  WRK-SALDOI      PIC 9(04)V99       VALUE ZEROS.
+           02  WRK-PAGAMENTO   PIC 9(04)V99       VALUE ZEROS.
+
+      *----------------- VARIAVEL DE CALCULO
+       01  WRK-SALDOF          PIC 9(04)V99       VALUE ZEROS.
+       01  WRK-PAGAMENTO-QT    PIC 9(06)V99       VALUE ZEROS.
+
+       
+       01   WRK-FLAG           PIC X(01)         VALUE "S".
+       
+       PROCEDURE           DIVISION.
+       0000-PRINCIPAL      SECTION.    
+             PERFORM 0100-INICIAL.
+             PERFORM 0200-PROCESSAR UNTIL WRK-FLAG EQUAL "N".
+             PERFORM 0300-FINALIZAR.
+             STOP RUN. 
+       0000-PRINCIPAL-FIM. EXIT.
+       
+       
+       
+       0100-INICIAL        SECTION.
+               DISPLAY "RECEBA SALDO INICIAL"
+               ACCEPT WRK-SALDOI.       
+               COMPUTE WRK-SALDOF = WRK-SALDOI.
+       0100-INICIAL-FIM. EXIT.
+       
+       
+       0200-PROCESSAR        SECTION.
+
+             
+               DISPLAY "------------------"
+               DISPLAY "SALDO ATUAL " WRK-SALDOF
+               DISPLAY "------------------"
+               
+               DISPLAY "VALOR DO PAGAMENTO "
+               ACCEPT WRK-PAGAMENTO       
+               
+               IF WRK-PAGAMENTO EQUAL 0  
+                   MOVE "N" TO WRK-FLAG
+               ELSE
+                  
+                  IF WRK-PAGAMENTO <= WRK-SALDOF
+                   COMPUTE WRK-SALDOF = WRK-SALDOF - WRK-PAGAMENTO
+                   ADD WRK-PAGAMENTO  TO WRK-PAGAMENTO-QT
+                  ELSE 
+                   DISPLAY "SEM SALDO PARA PAGAMENTO "
+                   DISPLAY "SEU SALDO = " WRK-SALDOF
+                  END-IF    
+                  
+              END-IF    . 
+          
+            
+            
+       0200-PROCESSAR-FIM. EXIT.    
+       
+       
+       
+       0300-FINALIZAR       SECTION.
+               DISPLAY "SALDO INICIAL " WRK-SALDOI.
+               DISPLAY "PAGAMENTOS    " WRK-PAGAMENTO-QT.
+               DISPLAY "SALDO FINAL   " WRK-SALDOF.
+       0300-FINALIZAR-FIM. EXIT.  
+       
+
        
